@@ -1,7 +1,7 @@
 import metaknowledge as mk
 import networkx as Nx
 import os
-os.chdir("/Users/Yanish/Documents/Fall_2015/Integ_475/mini_project_2/Integ475Project")
+os.chdir("/Users/Yanish/Documents/Fall_2015/Integ_475/final/Integ475Final")
 
 RC = mk.RecordCollection ("data/")
 coAuth = RC.coAuthNetwork()
