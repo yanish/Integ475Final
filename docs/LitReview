@@ -1,0 +1,53 @@
+---------------------------
+Literature Review
+
+ZOMBIE PLANNING !!
+---------------------------
+
+
+Article:
+
+(This is done with our Zombie network at the below requirements)
+network <- delete.edges(network, which(E(network)$weight <3))
+network <- delete.vertices(network, which(degree(network) <4.5))
+
+# Network 1
+1. Book "A Materialist Theory of the Mind"
+- Can't read it online.
+
+5. Book "The Conscious Mind: In Search of a Fundamental Theory"
+- Can't read it online.
+
+9. Same book as 1, but written under a different authors name
+
+10. Book "Consciousness Explained"
+https://en.wikipedia.org/wiki/Consciousness_Explained
+
+11. Book "Thinking about Consciousness"
+
+12.Book "Knowledge, Possibility and Consciousness"
+http://www.al-edu.com/wp-content/uploads/2014/05/Perry-J.-Knowledge-Possibility-and-Consciousness-2001.pdf
+
+13.
+
+14.
+
+16.
+
+17.
+
+# Network 2
+2.
+
+3.
+
+4.
+
+
+6.
+
+7.
+
+8.
+
+15.

@@ -1,0 +1,55 @@
+---
+title: "475PlottingArticles"
+author: "Megan Wylie"
+date: "December 12, 2015"
+output: html_document
+---
+
+```{r}
+library(igraph)
+library(dplyr)
+library(ggplot2)
+
+setwd("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final")
+
+
+dat <- read.csv("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final/data/dat.csv")
+
+head(dat)
+View(dat)
+summary(dat)
+
+Zombies <- select(dat, SO, TI, PY, CL, PT)
+
+plot(Zombies)
+
+#Since when have people been talking about zombies?
+ggplot(Zombies, aes(PY)) +
+  geom_bar(stat="bin") + theme_minimal()
+
+#After 2000s ish.
+
+ggplot(Zombies, aes(PT, PY)) +
+  geom_point() + theme_minimal()
+
+#It appears that most are published in journals through time, but more recently books and series. 
+
+ggplot(Zombies, aes(SO)) +
+  geom_bar(stat="bin") + theme_minimal()
+
+#One journal is really popular.
+
+ZombiesJ <- filter(dat, SO == "Library Journal")
+
+#This plots the years and types for the Library Journal
+ggplot(ZombiesJ, aes(PT, PY)) +
+  geom_bar(stat='bin') + theme_minimal()
+
+```
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+---
+title: "NetworkZombies"
+author: "Megan Wylie"
+date: "December 13, 2015"
+output: html_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+library(igraph)
+library(dplyr)
+library(ggplot2)
+
+setwd("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final/Networks")
+
+network <- read.graph("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final/Networks/net.graphml", format = "graphml")
+
+dat <- read.csv("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final/Data/dat.csv")
+
+plot(network)
+
+network <- simplify(network, remove.multiple = TRUE, remove.loops = TRUE)
+network <- delete.edges(network, which(E(network)$weight <3)) 
+network <- delete.vertices(network, which(degree(network) <4.5)) 
+
+summary(network)
+
+plot(network, edge.arrow.size=4, vertex.label=NA)
+
+View(dat)
+
+V(network)$info
+
+plot(network)
+
+# The nodes 8, 4, 7, 15, 6, 2, and 3 cite eachother
+
+# The nodes 14, 17, 16, 5, 9, 13, 12, 1, 11, 12 and 10
+
+# See literature review for how these relate. 
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
