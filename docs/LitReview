@@ -4,12 +4,47 @@ Literature Review
 ZOMBIE PLANNING !!
 ---------------------------
 
+First we consulted the Web of Science, downloading all articles with the key word "zombie". We received over 700 results. From this we created a csv and graphml file to analyze some key players in this topic area.
+
+One approach was looking at the networks of the articles. Those that cited eachother may be talking about certain aspects of zombies or how to best naviagate a zombie world.
+We plotted a network with weights below 4 and degrees below 6.
+
+```{r, echo=FALSE}
+library(igraph)
+library(dplyr)
+library(ggplot2)
+
+setwd("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final/Networks")
+
+network <- read.graph("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final/Networks/net.graphml", format = "graphml")
+
+dat <- read.csv("C:/Users/Mgnwylie/Documents/INTEGFinal/Integ475Final/Data/dat.csv")
+
+plot(network)
+
+network <- simplify(network, remove.multiple = TRUE, remove.loops = TRUE)
+network <- delete.edges(network, which(E(network)$weight <4))
+network <- delete.vertices(network, which(degree(network) <6))
+
+summary(network)
+
+plot(network, edge.arrow.size=4, vertex.label=NA)
+```
+
+These are the top 18 articles we found in the subject area.
+
+```{r, echo=FALSE}
+V(network)$info
+```
+
+The articles had two main subject areas: philosophy and crime in south africa.
+
 
 Article:
 
 (This is done with our Zombie network at the below requirements)
-network <- delete.edges(network, which(E(network)$weight <3))
-network <- delete.vertices(network, which(degree(network) <4.5))
+network <- delete.edges(network, which(E(network)$weight <4))
+network <- delete.vertices(network, which(degree(network) <6))
 
 # Network 1
 1. Book "A Materialist Theory of the Mind"
@@ -28,25 +63,33 @@ https://en.wikipedia.org/wiki/Consciousness_Explained
 12.Book "Knowledge, Possibility and Consciousness"
 http://www.al-edu.com/wp-content/uploads/2014/05/Perry-J.-Knowledge-Possibility-and-Consciousness-2001.pdf
 
-13.
+13. Book "Naming and Necessity"
+https://en.wikipedia.org/wiki/Naming_and_Necessity
 
-14.
+14.Block N, 1999, PHILOS REV, V108, P1, DOI 10.2307/2998259"
 
-16.
+16.BLOCK N, 1995, BEHAV BRAIN SCI, V18, P227
 
-17.
+17.Book "What is it like to be a bat?"
+https://en.wikipedia.org/wiki/What_Is_it_Like_to_Be_a_Bat%3F
+
+18. Epiphenomenal Qualia
+http://www.sfu.ca/~jillmc/JacksonfromJStore.pdf
 
 # Network 2
-2.
+2. Article: Criminal Justice, Cultural Justice
+http://isites.harvard.edu/fs/docs/icb.topic1286816.files/Comaroff%20and%20Comaroff%202004%20Criminal%20Justice%20Cultural%20Justice.pdf
 
-3.
+3.Article:Work organizations as secular religions
+https://www.researchgate.net/publication/266911838_Ashforth_BE_Vaidyanath_D_2002_Work_organizations_as_secular_religions_Journal_of_Management_Inquiry_22_359-370
 
-4.
-
+4. Book
+https://books.google.ca/books?id=xc_3qbj7lD0C&pg=PA331&lpg=PA331&dq=HUND+J,+2000&source=bl&ots=dsBU5r1NB0&sig=O1PtgN5jmayS70ePz-8Vds90Ysk&hl=en&sa=X&ved=0ahUKEwjbr-jZ7OrJAhXDJh4KHT0vDDkQ6AEIHDAA#v=onepage&q=HUND%20J%2C%202000&f=false
 
 6.
 
-7.
+7.Book - Witchcraft, Violence and Democracy in South Africa
+http://press.uchicago.edu/ucp/books/book/chicago/W/bo3534802.html
 
 8.
 
