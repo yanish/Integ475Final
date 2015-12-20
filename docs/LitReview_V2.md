@@ -6,7 +6,7 @@ ZOMBIE PLANNING !!
 
 First we consulted the Web of Science, downloading all articles with the key word "zombie". We received over 700 results. From this we created a csv and graphml file to analyze some key players in this topic area.
 
-One approach was looking at the networks of the articles. Those that cited eachother may be talking about certain aspects of zombies or how to best naviagate a zombie world.
+One approach was looking at the networks of the articles. Those that cited each other may be talking about certain aspects of zombies or how to best navigate a zombie world.
 We plotted a network with weights below 4 and degrees below 6.
 
 ```{r, echo=FALSE}
@@ -37,66 +37,11 @@ These are the top 18 articles we found in the subject area.
 V(network)$info
 ```
 
-The articles had two main subject areas: philosophy and crime in south africa.
+The articles had two main subject areas: philosophy and crime in south Africa.
 
 The philosophy texts are concerned with the state of mind and body (@book{armstrong2002materialist). Philosophers in these texts speak of "philosophical zombies" or people that exist who are physically identical to humans but lack qualia (or conciousness/a personal experience) (@article{block1993consciousness; @article{nagel1974like). Armstrong (1968) debates the philosophy of mind and the difference between the physical brain and the mind that lives inside it. Chalmers (1997) further developed Armstrong's idea in relation to zombies saying that you could perceive a whole world where people have brains but no consciousness (@book{chalmers1997conscious).
 Ultimately Armstrong (1968), and Chalmers (1997) are bringing forward the difference between the physical and mental in arguments about zombies possible existence, concluding that zombies are physically possible. This leads to ethical arguments in how humans interact with zombies, assuming they come into existence.
 However, Dennett (1993) argues the opposite. The argument is that if we are physically identical then we are all zombies to begin with (@article{block1993consciousness).
 These arguments are about dualism and materialism of humans. We are dualistic in the way that we are a brain and conciousness, and materialistic in the way that our physical is our fundamental state (@book{papineau2002thinking)
 
-
-
-Article:
-
-(This is done with our Zombie network at the below requirements)
-network <- delete.edges(network, which(E(network)$weight <4))
-network <- delete.vertices(network, which(degree(network) <6))
-
-# Network 1
-1. Book "A Materialist Theory of the Mind"
-- Can't read it online.
-
-5. Book "The Conscious Mind: In Search of a Fundamental Theory"
-- Can't read it online.
-
-9. Same book as 1, but written under a different authors name
-
-10. Book "Consciousness Explained"
-https://en.wikipedia.org/wiki/Consciousness_Explained
-
-11. Book "Thinking about Consciousness"
-
-12.Book "Knowledge, Possibility and Consciousness"
-http://www.al-edu.com/wp-content/uploads/2014/05/Perry-J.-Knowledge-Possibility-and-Consciousness-2001.pdf
-
-13. Book "Naming and Necessity"
-https://en.wikipedia.org/wiki/Naming_and_Necessity
-
-14.Block N, 1999, PHILOS REV, V108, P1, DOI 10.2307/2998259"
-
-16.BLOCK N, 1995, BEHAV BRAIN SCI, V18, P227
-
-17.Book "What is it like to be a bat?"
-https://en.wikipedia.org/wiki/What_Is_it_Like_to_Be_a_Bat%3F
-
-18. Epiphenomenal Qualia
-http://www.sfu.ca/~jillmc/JacksonfromJStore.pdf
-
-# Network 2
-2. Article: Criminal Justice, Cultural Justice
-http://isites.harvard.edu/fs/docs/icb.topic1286816.files/Comaroff%20and%20Comaroff%202004%20Criminal%20Justice%20Cultural%20Justice.pdf
-
-3.Article:Work organizations as secular religions
-https://www.researchgate.net/publication/266911838_Ashforth_BE_Vaidyanath_D_2002_Work_organizations_as_secular_religions_Journal_of_Management_Inquiry_22_359-370
-
-4. Book
-https://books.google.ca/books?id=xc_3qbj7lD0C&pg=PA331&lpg=PA331&dq=HUND+J,+2000&source=bl&ots=dsBU5r1NB0&sig=O1PtgN5jmayS70ePz-8Vds90Ysk&hl=en&sa=X&ved=0ahUKEwjbr-jZ7OrJAhXDJh4KHT0vDDkQ6AEIHDAA#v=onepage&q=HUND%20J%2C%202000&f=false
-
-6.
-
-7.Book - Witchcraft, Violence and Democracy in South Africa
-http://press.uchicago.edu/ucp/books/book/chicago/W/bo3534802.html
-
-8.
-
-15.
+The second network of articles focuses on claims of zombie court arguments in South Africa (@article{comaroff2004criminal). Ashforth (2005) speaks of people taken by witches and transformed into zombies (@book{ashforth2005witchcraft). How South Africa deals with these instances may provide some insight into how we should deal with issues of zombies as humans.
